@@ -1,0 +1,80 @@
+{%extends "base.html"%}
+{%block content%}
+
+<!-- <header class="top">header</header> -->
+<nav class="leftside">
+    <div class="slides">
+        <!-- <img alt="banner" src="{{url_for('static', filename='banner_336x280.gif')}}" width="200px" loading="lazy">
+        <img src="http://dummyimage.com/280x200/1560f0/fff.png&text=2" width="200px" loading="lazy" />
+        <img src="http://dummyimage.com/280x200/C03229/fff.png&text=3" width="200px" loading="lazy" /> -->
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'fb0937a3deb0a1efe27672bf9196fae3',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectiveperformanceformat.com/fb0937a3deb0a1efe27672bf9196fae3/invoke.js"></scr' + 'ipt>');
+        </script>
+
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '21d484168a3fc12aef0f691e9ec5308e',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectiveperformanceformat.com/21d484168a3fc12aef0f691e9ec5308e/invoke.js"></scr' + 'ipt>');
+        </script>
+
+    </div>
+
+    <!-- <div class="tall">
+        <img alt="tall-banner" src="{{url_for('static', filename='banner_336x280.gif')}}" width="200px" loading="lazy">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'fb0937a3deb0a1efe27672bf9196fae3',
+                'format' : 'iframe',
+                'height' : 280,
+                'width' : 330,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectiveperformanceformat.com/fb0937a3deb0a1efe27672bf9196fae3/invoke.js"></scr' + 'ipt>');
+        </script>
+    </div> -->
+</nav>
+
+<section class="main">
+
+    <div class=container_middle>
+        <div class="cards">
+
+            {%if not r%}
+            <img src="{{url_for('static', filename='not_found.jpg')}}" width="200px">
+            <br />
+            <h1>sorry not found</h1>
+            {%else%}
+            {%for i in range(r | length) %}
+            <a href={{"https://kol.jumia.com/api/click/custom/caff9ca8-aca1-43ce-be79-df20dad02a44/306ad549-764c-349e-a497-cdd2d98c349a?r=https%3A%2F%2Fwww.jumia.com.ng%2F{}".format(r[i]["link"])}} target="_blank" rel="noopener noreferrer" class="plink">
+                <div class="product">
+                    <img src={{ r[i]["image"] }} class="card-img-top" alt="..." width="300px" height="300px" loading="lazy">
+                    <div class="card-body">
+                        <p class="txt"> {{ r[i]["name"] }}</p>
+                        <p class="prtxt">{{ r[i]["price"] }}</p>
+                        <p class="store">Jumia</p>
+                    </div>
+                </div>
+
+            </a>
+            {%endfor%}
+            {%endif%}
+        </div>
+    </div>
+</section>
+<!-- <script type='text/javascript' src='//pl16719206.trustedgatetocontent.com/f1/c9/13/f1c9134cc18f53bfe120b09616ba0f9d.js'></script> -->
+<!-- <aside class="rightside">aside</aside> -->
+<footer>
+    ©Wizemart by Omoshiroi 
+</footer> {%endblock content%}

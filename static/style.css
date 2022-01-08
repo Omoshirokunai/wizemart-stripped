@@ -1,0 +1,344 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url(./fonts/Comfortaa-Regular.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(./fonts/Poppins-Regular.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: Poppins-semi;
+    src: url(./fonts/Poppins-SemiBold.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: Poppins-bold;
+    src: url(./fonts/Poppins-Bold.ttf);
+    font-display: swap;
+}
+
+:root {
+    --dark-background: #121212;
+    --light-background: #fffdf6;
+    --light-font: #d1d1d1;
+    --dark-font: #272a2e;
+    --light-card: #fffdf6;
+    --dark-card: #282828;
+    --light-article: #fffdf6;
+    --dark-links: #978826;
+    --light-links: #5c5470;
+    --links-hover: #a03c56;
+    --theme-color: #7e77f6;
+    --theme-color-2: #7e77f6;
+    --border-color: #4e4e4e;
+    --errors: #EC4E20;
+    --good: #06A77D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--light-background);
+    /* !! */
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav section"
+
+        /* "nav section aside" */
+        "footer footer";
+    /* grid-template-rows: 80px 1fr 50px; */
+    /* grid-template-columns: 15% 1fr 18%; */
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 20% 1fr;
+    grid-gap: 3px;
+    height: 100vh;
+    margin: 8px;
+}
+
+/* custom scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* scroll end */
+
+
+/* .max-width {
+    max-width: 1300px;
+    padding: 10px 60px;
+
+    /* padding: 0 80px; */
+/* margin: auto; 
+} */
+
+
+
+/*?? slideshow */
+/* .slides {
+    width: 100%;
+    margin-right: -10px;
+    position: relative;
+
+
+}
+
+.slides img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: slideshow 12s linear 0s infinite;
+}
+
+.slides img:nth-child(2) {
+    z-index: 2;
+    animation-delay: 4s;
+}
+
+.slides img:nth-child(3) {
+    z-index: 3;
+    animation-delay: 8s;
+}
+.tall{
+    margin-top: 90%;
+    width: 100%;
+    height: 100%;
+}
+.tall img{
+    width: 100%;
+    height: 100%;
+} */
+/* @keyframes slideshow {
+    25% {
+        opacity: 1;
+    }
+
+    33.33% {
+        opacity: 0;
+    }
+
+    91.66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+} */
+
+/*! layout */
+.top {
+    background: #707070;
+    grid-area: header;
+}
+
+.leftside {
+    /* background: var(--light-font); */
+    grid-area: nav;
+    height: 10%;
+}
+
+.main {
+    background: #ABABAB;
+    grid-area: section;
+}
+/* 
+.rightside {
+    background: #C9C9C9;
+    grid-area: aside;
+} */
+
+footer {
+    background: #707070;
+    grid-area: footer;
+}
+/* .rightside, */
+.top,
+.leftside,
+.main,
+footer {
+    padding: 5px;
+}
+
+/* ?? products */
+.container__middle {
+    /* Take the remaining width */
+    flex-grow: 1;
+    border: 2px solid #969696;
+}
+
+.cards {
+    display: flex;
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+    padding: 10px;
+
+}
+.plink{
+    height: 19rem;
+    margin: 7px;
+}
+.product {
+    /* There will be 4 cards per row */
+    flex-basis: 25%;
+    transition: 0.3s;
+    margin: 10px 10px 80px 12px;
+    width: 14rem;
+    height: 17rem;
+    border-radius: 15px 15px 15px 15px;
+
+}
+
+.product:hover {
+    box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    margin-top: -18px;
+    width: 14rem;
+    height: 4rem;
+    background-color: var(--light-article);
+    border-radius: 0 0 10px 10px;
+    padding: 8px;
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    width: 15rem;
+    height: 15rem;
+    max-width: 100%;
+    overflow: hidden;
+
+}
+
+.txt {
+    color: var(--dark-font);
+    font-size: 15px;
+    font-weight: lighter;
+    text-overflow: ellipsis;
+    /* will make [...] at the end */
+    width: 13rem;
+    /* change to your preferences */
+    white-space: nowrap;
+    /* paragraph to one line */
+    overflow: hidden;
+    font-family: Poppins;
+
+}
+
+.prtxt {
+    font-family: Poppins;
+    font-weight: bolder;
+    font-size: 17px;
+    color: var(--dark-font);
+}
+.store{
+    font-size: 10px;
+    margin-top: -10px;
+    float: right;
+}
+
+@media all and (max-width:800px) {
+    body {
+
+        /* !! */
+        display: grid;
+        grid-template-areas:
+            "header"
+            "section"
+    
+            /* "nav section aside" */
+            "footer";
+        /* grid-template-rows: 80px 1fr 50px; */
+        /* grid-template-columns: 15% 1fr 18%; */
+        grid-template-rows: 80px 1fr;
+        grid-template-columns: 100%;
+        grid-gap: 2px;
+        margin: 5px;
+    }
+    .leftside{
+        display: none;
+    }
+
+    .container__middle {
+        /* Take the remaining width */
+        flex-grow: 3;
+        border: none;
+    }
+    
+    .cards {
+        /* display: flex; */
+        /* Put a card in the next row when previous cards take all width */
+        /* flex-wrap: wrap; */
+        padding: 2px;
+    
+    }
+    .plink{
+        height: 10rem;
+        width: 9rem;
+        margin: 8px 9px 6px 5px;
+    }
+    .product {
+        /* There will be 4 cards per row */
+        /* flex-basis: 2%; */
+        /* transition: 0.3s; */
+        margin: 5px 5px 10px 5px;
+        width: 9rem;
+        height: 8rem;
+    
+    }
+    
+    
+    .card-body {
+        margin:-10px 6px 0 0;
+        width: 9rem;
+        height: 2.5rem;
+        padding: 6px;
+    }
+    
+    .card-img-top {
+        width: 9rem;
+        height: 8rem;
+        max-width: 100%;
+    
+    }
+    
+    .txt {
+        font-family: Poppins-semi;
+        font-size: 12px;
+        width: 7.9rem;    
+    }
+    
+    .prtxt {
+        font-family: Poppins-bold;
+        font-size: 12px;
+    }
+    
+}

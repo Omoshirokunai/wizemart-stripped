@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="wizemart is a website that provides a better search experience for shoppers, by delivering 
+    better recommendations and sorting to ensure a customer is getting the best bang for bucks.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Wizemart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homestyle.css') }}">
+</head>
+<body>
+	
+	<div class="navbar">
+		<div style="float: right">
+			<div class="menu-icon" onclick="expand_sidebar()">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="sidebar">
+		<button class="close" onclick="collapse_sidebar()">&times;</button>
+		<div>
+			<a href="/">About Us</a>
+			<a href="/">Privacy-Policy</a>
+		</div>
+	</div>
+
+	<div class="container">
+		<center>
+
+			<img class="logo" alt="Wizemart" src="{{url_for('static', filename='wizemart_logo.png')}}">
+            <h2>Wizemart</h2>
+			
+			<div class="form-wrapper">
+				<form method="Post">
+					<input type="text" name="sch" placeholder="Find your product at the best price" >
+					<button class="search" action="">
+						<img alt="Search" type="submit" src="{{url_for('static', filename='search.png')}}" width="20px" height="20px">
+					</button>
+				</form>
+			</div>
+
+			<br>
+
+			<p class="title">
+				Tired of overspending online? We can help.
+			</p>
+			<p>
+				We help you find best prices and reliable sellers.<br>
+			</p>
+
+			<!-- <button>Add DuckDuckGo to your brain</button> -->
+
+		</center>
+	</div>
+
+	<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
